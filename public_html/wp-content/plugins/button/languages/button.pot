@@ -1,0 +1,414 @@
+# Copyright (C) 2016 Button
+# This file is distributed under the same license as the Button package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Button 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/button\n"
+"POT-Creation-Date: 2016-10-03 06:56:29+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2016-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: admin/classes/WDButton_CPT_class.class.php:35
+msgid "Title"
+msgstr ""
+
+#. #-#-#-#-#  plugin.pot (Button 1.0.0)  #-#-#-#-#
+#. Plugin Name of the plugin/theme
+#: admin/classes/WDButton_CPT_class.class.php:36
+#: admin/includes/WDBUTTON_CPT.php:4
+#: admin/setting_UI/button_setting_basic.php:71
+msgid "Button"
+msgstr ""
+
+#: admin/classes/WDButton_CPT_class.class.php:37
+#: admin/classes/WDButton_metaboxes_class.class.php:25
+msgid "Shortcode"
+msgstr ""
+
+#: admin/classes/WDButton_CPT_class.class.php:38
+msgid "Date"
+msgstr ""
+
+#: admin/classes/WDButton_CPT_class.class.php:102
+msgid "View Demo"
+msgstr ""
+
+#: admin/classes/WDButton_CPT_class.class.php:103
+msgid "Buy Now $15"
+msgstr ""
+
+#: admin/classes/WDButton_CPT_class.class.php:104
+msgid "Get Support"
+msgstr ""
+
+#: admin/classes/WDButton_metaboxes_class.class.php:18
+msgid "Button Layouts"
+msgstr ""
+
+#: admin/classes/WDButton_metaboxes_class.class.php:21
+msgid "Button Settings"
+msgstr ""
+
+#: admin/classes/WDButton_metaboxes_class.class.php:28
+msgid "Rate Us If You Like This Plugin"
+msgstr ""
+
+#: admin/classes/widget/button_widget.php:15
+msgid "Button Widget"
+msgstr ""
+
+#: admin/classes/widget/button_widget.php:16
+msgid "Display Custom Button in widget area."
+msgstr ""
+
+#: admin/classes/widget/button_widget.php:68
+msgid "Title:"
+msgstr ""
+
+#: admin/classes/widget/button_widget.php:71
+msgid "Select"
+msgstr ""
+
+#: admin/includes/WDBUTTON_CPT.php:5 admin/includes/WDBUTTON_CPT.php:6
+#: admin/includes/WDBUTTON_CPT.php:7
+msgid "Add New Button"
+msgstr ""
+
+#: admin/includes/WDBUTTON_CPT.php:8
+msgid "New Link"
+msgstr ""
+
+#: admin/includes/WDBUTTON_CPT.php:9
+msgid "All Buttons"
+msgstr ""
+
+#: admin/includes/WDBUTTON_CPT.php:10
+msgid "View Link"
+msgstr ""
+
+#: admin/includes/WDBUTTON_CPT.php:11
+msgid "Search Links"
+msgstr ""
+
+#: admin/includes/WDBUTTON_CPT.php:12
+msgid "No Links found"
+msgstr ""
+
+#: admin/includes/WDBUTTON_CPT.php:13
+msgid "No Links found in Trash"
+msgstr ""
+
+#: admin/includes/page_post_custom_button.php:6
+msgid "Button Shortcode"
+msgstr ""
+
+#: admin/includes/page_post_custom_button.php:33
+msgid "<h2>Empty</h2>"
+msgstr ""
+
+#: admin/includes/page_post_custom_button.php:46
+#: admin/includes/page_post_custom_button.php:61
+msgid "Use This Button"
+msgstr ""
+
+#: admin/setting_UI/button_setting_background.php:3
+msgid "Background"
+msgstr ""
+
+#: admin/setting_UI/button_setting_background.php:6
+msgid "Background Color"
+msgstr ""
+
+#: admin/setting_UI/button_setting_background.php:10
+#: admin/setting_UI/button_setting_background.php:29
+msgid "start"
+msgstr ""
+
+#: admin/setting_UI/button_setting_background.php:15
+#: admin/setting_UI/button_setting_background.php:34
+#: admin/setting_UI/button_setting_background.php:54
+#: admin/setting_UI/button_setting_background.php:75
+msgid "End"
+msgstr ""
+
+#: admin/setting_UI/button_setting_background.php:25
+#: admin/setting_UI/button_setting_basic.php:101
+#: admin/setting_UI/button_setting_border.php:91
+#: admin/setting_UI/button_setting_border.php:110
+msgid "Hover Color"
+msgstr ""
+
+#: admin/setting_UI/button_setting_background.php:44
+msgid "Opacity"
+msgstr ""
+
+#: admin/setting_UI/button_setting_background.php:48
+#: admin/setting_UI/button_setting_background.php:69
+msgid "Start"
+msgstr ""
+
+#: admin/setting_UI/button_setting_background.php:65
+msgid "Hover Opacity"
+msgstr ""
+
+#: admin/setting_UI/button_setting_background.php:86
+msgid "Gradient stop"
+msgstr ""
+
+#: admin/setting_UI/button_setting_basic.php:3
+msgid "Basic Settings"
+msgstr ""
+
+#: admin/setting_UI/button_setting_basic.php:6
+msgid "Text"
+msgstr ""
+
+#: admin/setting_UI/button_setting_basic.php:16
+msgid "URL"
+msgstr ""
+
+#: admin/setting_UI/button_setting_basic.php:26
+msgid "Target"
+msgstr ""
+
+#: admin/setting_UI/button_setting_basic.php:30
+msgid "Open in new Window"
+msgstr ""
+
+#: admin/setting_UI/button_setting_basic.php:36
+msgid "Padding"
+msgstr ""
+
+#: admin/setting_UI/button_setting_basic.php:40
+#: admin/setting_UI/button_setting_border.php:129
+#: admin/setting_UI/button_setting_container.php:62
+#: admin/setting_UI/button_setting_text_shadow.php:16
+msgid "Top"
+msgstr ""
+
+#: admin/setting_UI/button_setting_basic.php:42
+#: admin/setting_UI/button_setting_basic.php:48
+#: admin/setting_UI/button_setting_basic.php:54
+#: admin/setting_UI/button_setting_basic.php:60
+#: admin/setting_UI/button_setting_basic.php:77
+#: admin/setting_UI/button_setting_basic.php:83
+#: admin/setting_UI/button_setting_basic.php:135
+#: admin/setting_UI/button_setting_border.php:22
+#: admin/setting_UI/button_setting_border.php:29
+#: admin/setting_UI/button_setting_border.php:37
+#: admin/setting_UI/button_setting_border.php:45
+#: admin/setting_UI/button_setting_border.php:74
+#: admin/setting_UI/button_setting_container.php:30
+#: admin/setting_UI/button_setting_container.php:64
+#: admin/setting_UI/button_setting_container.php:70
+#: admin/setting_UI/button_setting_container.php:76
+#: admin/setting_UI/button_setting_container.php:82
+msgid "PX"
+msgstr ""
+
+#: admin/setting_UI/button_setting_basic.php:46
+#: admin/setting_UI/button_setting_container.php:68
+msgid "Right"
+msgstr ""
+
+#: admin/setting_UI/button_setting_basic.php:52
+#: admin/setting_UI/button_setting_container.php:74
+msgid "Bottom"
+msgstr ""
+
+#: admin/setting_UI/button_setting_basic.php:58
+#: admin/setting_UI/button_setting_border.php:124
+#: admin/setting_UI/button_setting_container.php:80
+#: admin/setting_UI/button_setting_text_shadow.php:10
+msgid "Left"
+msgstr ""
+
+#: admin/setting_UI/button_setting_basic.php:75
+#: admin/setting_UI/button_setting_border.php:72
+msgid "Width"
+msgstr ""
+
+#: admin/setting_UI/button_setting_basic.php:81
+msgid "Height"
+msgstr ""
+
+#: admin/setting_UI/button_setting_basic.php:92
+msgid "Text Color"
+msgstr ""
+
+#: admin/setting_UI/button_setting_basic.php:96
+#: admin/setting_UI/button_setting_border.php:86
+#: admin/setting_UI/button_setting_border.php:105
+#: admin/setting_UI/button_setting_text_shadow.php:30
+msgid "Color"
+msgstr ""
+
+#: admin/setting_UI/button_setting_basic.php:111
+msgid "Font"
+msgstr ""
+
+#: admin/setting_UI/button_setting_border.php:3
+#: admin/setting_UI/button_setting_border.php:82
+msgid "Border"
+msgstr ""
+
+#: admin/setting_UI/button_setting_border.php:6
+msgid "Button Circle"
+msgstr ""
+
+#: admin/setting_UI/button_setting_border.php:16
+msgid "Radius"
+msgstr ""
+
+#: admin/setting_UI/button_setting_border.php:20
+msgid "Top Left"
+msgstr ""
+
+#: admin/setting_UI/button_setting_border.php:30
+msgid "Top Right"
+msgstr ""
+
+#: admin/setting_UI/button_setting_border.php:34
+msgid "Bootom Left"
+msgstr ""
+
+#: admin/setting_UI/button_setting_border.php:46
+msgid "Bootom Right"
+msgstr ""
+
+#: admin/setting_UI/button_setting_border.php:55
+msgid "Style"
+msgstr ""
+
+#: admin/setting_UI/button_setting_border.php:101
+msgid "Border Shadow"
+msgstr ""
+
+#: admin/setting_UI/button_setting_border.php:120
+#: admin/setting_UI/button_setting_text_shadow.php:6
+msgid "Shadow Offset"
+msgstr ""
+
+#: admin/setting_UI/button_setting_border.php:139
+#: admin/setting_UI/button_setting_text_shadow.php:45
+msgid "Shadow Blur"
+msgstr ""
+
+#: admin/setting_UI/button_setting_container.php:3
+msgid "Container"
+msgstr ""
+
+#: admin/setting_UI/button_setting_container.php:6
+msgid "Container Use"
+msgstr ""
+
+#: admin/setting_UI/button_setting_container.php:16
+msgid "Container Center"
+msgstr ""
+
+#: admin/setting_UI/button_setting_container.php:26
+msgid "Container Width"
+msgstr ""
+
+#: admin/setting_UI/button_setting_container.php:37
+msgid "Button Align"
+msgstr ""
+
+#: admin/setting_UI/button_setting_container.php:58
+msgid "Margin"
+msgstr ""
+
+#: admin/setting_UI/button_setting_text_shadow.php:3
+msgid "Text Shadow"
+msgstr ""
+
+#: admin/setting_UI/button_setting_text_shadow.php:26
+msgid "Shadow"
+msgstr ""
+
+#: admin/setting_UI/button_setting_text_shadow.php:35
+msgid "Hover"
+msgstr ""
+
+#: admin/setting_UI/layouts.php:9
+msgid "Simple Button"
+msgstr ""
+
+#: admin/setting_UI/layouts.php:10 admin/setting_UI/layouts.php:18
+#: admin/setting_UI/layouts.php:26 admin/setting_UI/layouts.php:34
+#: admin/setting_UI/layouts.php:42 admin/setting_UI/layouts.php:50
+#: admin/setting_UI/layouts.php:58 admin/setting_UI/layouts.php:66
+#: admin/setting_UI/layouts.php:74 admin/setting_UI/layouts.php:88
+#: admin/setting_UI/layouts.php:95 admin/setting_UI/layouts.php:103
+#: admin/setting_UI/layouts.php:110 admin/setting_UI/layouts.php:116
+#: admin/setting_UI/layouts.php:122 admin/setting_UI/layouts.php:128
+msgid "Demo"
+msgstr ""
+
+#: admin/setting_UI/layouts.php:15 admin/setting_UI/layouts.php:23
+#: admin/setting_UI/layouts.php:31 admin/setting_UI/layouts.php:39
+#: admin/setting_UI/layouts.php:47 admin/setting_UI/layouts.php:55
+#: admin/setting_UI/layouts.php:63 admin/setting_UI/layouts.php:71
+#: admin/setting_UI/layouts.php:86 admin/setting_UI/layouts.php:93
+#: admin/setting_UI/layouts.php:101 admin/setting_UI/layouts.php:108
+#: admin/setting_UI/layouts.php:114 admin/setting_UI/layouts.php:120
+#: admin/setting_UI/layouts.php:126
+msgid "Available in Pro"
+msgstr ""
+
+#: admin/setting_UI/layouts.php:17
+msgid "2D Transitions"
+msgstr ""
+
+#: admin/setting_UI/layouts.php:25
+msgid "Border Transitions"
+msgstr ""
+
+#: admin/setting_UI/layouts.php:33
+msgid "Curl"
+msgstr ""
+
+#: admin/setting_UI/layouts.php:41
+msgid "Speech Bubble"
+msgstr ""
+
+#: admin/setting_UI/layouts.php:49
+msgid "BG Transition"
+msgstr ""
+
+#: admin/setting_UI/layouts.php:57
+msgid "Icon Button"
+msgstr ""
+
+#: admin/setting_UI/layouts.php:65
+msgid "Icon With Text"
+msgstr ""
+
+#: admin/setting_UI/layouts.php:73
+msgid "Hexagon"
+msgstr ""
+
+#: admin/setting_UI/layouts.php:82
+msgid "Button Sets"
+msgstr ""
+
+#. #-#-#-#-#  plugin.pot (Button 1.0.0)  #-#-#-#-#
+#. Plugin URI of the plugin/theme
+#. #-#-#-#-#  plugin.pot (Button 1.0.0)  #-#-#-#-#
+#. Author URI of the plugin/theme
+msgid "http://webdzier.com"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"WordPress button generator plugin.You can create any type of button. <a href="
+"\"http://webdzier.com\">Get Pro version</a>."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "webdzier"
+msgstr ""

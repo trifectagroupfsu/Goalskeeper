@@ -1,7 +1,9 @@
 <?php
 
 /*
-  Plugin Name: Player Registration Form
+  Module Name: Player Registration Form
+	Front-end user registration for players only. Players will have no website privileges (other than standard website interactions).
+	2/27/2017
   Tracy Dash
  */
 
@@ -14,7 +16,7 @@ class Player_registration_form
     private $password;
     private $first_name;
     private $last_name;
-    private $age;
+    private $birth_year;
     private $phone;
     private $street_address;
     private $city;
@@ -24,7 +26,8 @@ class Player_registration_form
     private $parent_email;
     private $parent_phone;
 
-
+		// Constructor
+		// Utilizes flat UI kit for CSS style
     function __construct()
     {
 
@@ -32,7 +35,8 @@ class Player_registration_form
         add_action('wp_enqueue_scripts', array($this, 'flat_ui_kit'));
     }
 
-
+		// HTML form with input fields 
+		// Note that 'birth year' and last four fields are for players ONLY
     public function registration_form()
     {
 
@@ -77,10 +81,10 @@ class Player_registration_form
                 </div>
 
                 <div class="form-group">
-                    <input name="reg_age" type="text" class="form-control login-field"
-                           value="<?php echo(isset($_POST['reg_age']) ? $_POST['reg_age'] : null); ?>"
-                           placeholder="Age" id="reg-age"/>
-                    <label class="login-field-icon fui-user" for="reg-age"></label>
+                    <input name="reg_birth_year" type="text" class="form-control login-field"
+                           value="<?php echo(isset($_POST['reg_birth_year']) ? $_POST['reg_birth_year'] : null); ?>"
+                           placeholder="Birth year" id="reg-birth_year"/>
+                    <label class="login-field-icon fui-user" for="reg-birth_year"></label>
                 </div>
 
                 <div class="form-group">
@@ -145,81 +149,103 @@ class Player_registration_form
     <?php
     }
 
-	// this performs some checks
+		// Validation checks for field input 
     function validation()
     {
-
-        if (empty($this->username) || empty($this->password) || empty($this->email)) {
+				// All these fields should be present
+        if (empty($this->username) || empty($this->password) || empty($this->email) || empty($this->first_name) || empty($this->last_name) || empty($this->birth_year))  {
             return new WP_Error('field', 'Required form field is missing');
         }
-
+				// Ensures username is adequate length
         if (strlen($this->username) < 4) {
             return new WP_Error('username_length', 'Username too short. At least 4 characters is required');
         }
-
+				// Ensures password is adequate length
         if (strlen($this->password) < 5) {
             return new WP_Error('password', 'Password length must be greater than 5');
         }
-
+				// Ensures email is actually an email address
         if (!is_email($this->email)) {
             return new WP_Error('email_invalid', 'Email is not valid');
         }
-
+				// Ensures email isn't already being used by another user
         if (email_exists($this->email)) {
-            return new WP_Error('email', 'Email Already in use');
+            return new WP_Error('email', 'Email already in use');
         }
+				// Ensures birth year is proper four digit year format
+				if(!empty($this->birth_year)){
+					if(!($this->birth_year>1000 && $this->birth_year<2100)){
+							return new WP_Error('birth_year', 'Birth year must be a four digit year');
+					}
+				}
+				// Ensures phone number is in proper xxx-xxx-xxxx format				
+				if(!empty($this->phone)){
+					$numbersOnly = ereg_replace("[^0-9]", "", $this->phone);
+					$numberOfDigits = strlen($numbersOnly);
+					if (!($numberOfDigits == 10))
+						return new WP_Error('phone', 'Phone number should be in xxx-xxx-xxxx format');
+				}
+				// Ensures phone number is in proper xxx-xxx-xxxx format				
+				if(!empty($this->parent_phone)){
+					$pnumbersOnly = ereg_replace("[^0-9]", "", $this->parent_phone);
+					$pnumberOfDigits = strlen($numbersOnly);
+					if (!($numberOfDigits == 10))
+						return new WP_Error('phone', 'Parent phone number should be in xxx-xxx-xxxx format');
+				}
 
     }
 
     function registration()
     {
 
-	// creating array to add using wp_insert_user
+				// Creating array to add using wp_insert_user
         $userdata = array(
             'user_login' => esc_attr($this->username),
             'user_email' => esc_attr($this->email),
             'user_pass' => esc_attr($this->password),
             'first_name' => esc_attr($this->first_name),
             'last_name' => esc_attr($this->last_name),
-	    'role' => '',
+						'role' => '',
+						'display_name' => esc_attr($this->username),
         );
 
-
+				// Check for errors 
         if (is_wp_error($this->validation())) {
             echo '<div style="margin-bottom: 6px" class="btn btn-block btn-lg btn-danger">';
             echo '<strong>' . $this->validation()->get_error_message() . '</strong>';
             echo '</div>';
         } else {
-	    // this adds the standard fields to the user table
+						// This adds the standard fields to the user table
             $register_user = wp_insert_user($userdata);
 
-	    // this adds the extra fields to the usermeta table
-	    add_user_meta( $register_user, 'team_role', player);	
-	    add_user_meta( $register_user, 'player_age', $this->age);	
-	    add_user_meta( $register_user, 'player_phone', $this->phone);
-	    add_user_meta( $register_user, 'player_street_address', $this->street_address);
-	    add_user_meta( $register_user, 'player_city', $this->city);
-	    add_user_meta( $register_user, 'player_state', $this->state);
-	    add_user_meta( $register_user, 'player_parent_first_name', $this->parent_first_name);
-	    add_user_meta( $register_user, 'player_parent_last_name', $this->parent_last_name);
-	    add_user_meta( $register_user, 'player_parent_email', $this->parent_email);
+						// This adds the extra fields to the usermeta table
+						add_user_meta( $register_user, 'team_role', player);	
+						add_user_meta( $register_user, 'birth_year', $this->birth_year);	
+						add_user_meta( $register_user, 'phone', $this->phone);
+						add_user_meta( $register_user, 'street_address', $this->street_address);
+						add_user_meta( $register_user, 'city', $this->city);
+						add_user_meta( $register_user, 'state', $this->state);
+						add_user_meta( $register_user, 'player_parent_first_name', $this->parent_first_name);
+						add_user_meta( $register_user, 'player_parent_last_name', $this->parent_last_name);
+						add_user_meta( $register_user, 'player_parent_email', $this->parent_email);
+						add_user_meta( $register_user, 'player_parent_phone', $this->parent_phone);
 
-
-            if (!is_wp_error($register_user)) {
-
-                echo '<div style="margin-bottom: 6px" class="btn btn-block btn-lg btn-danger">';
-                echo '<strong>Registration complete. Goto <a href="http://youthcoaching.x10host.com">login page</a></strong>';
-                //echo '<strong>Registration complete. Goto <a href="' . wp_login_url() . '">login page</a></strong>';
-                echo '</div>';
-            } else {
-                echo '<div style="margin-bottom: 6px" class="btn btn-block btn-lg btn-danger">';
-                echo '<strong>' . $register_user->get_error_message() . '</strong>';
-                echo '</div>';
-            }
+						// Success message 
+						if (!is_wp_error($register_user)) {
+								echo '<div style="margin-bottom: 6px" class="btn btn-block btn-lg btn-danger">';
+								echo '<strong>Registration complete. Goto <a href="http://youthcoaching.x10host.com/user-login/">login page</a></strong>';
+								echo '</div>';
+						// Failure message
+						} else {
+								echo '<div style="margin-bottom: 6px" class="btn btn-block btn-lg btn-danger">';
+								echo '<strong>' . $register_user->get_error_message() . '</strong>';
+								echo '</div>';
+						}
         }
 
     }
 
+		// Flat UI CSS
     function flat_ui_kit()
     {
         wp_enqueue_style('bootstrap-css', plugins_url('bootstrap/css/bootstrap.css', __FILE__));
@@ -227,18 +253,20 @@ class Player_registration_form
 
     }
 
+		// What 
     function shortcode()
     {
-
+				// Start buffering
         ob_start();
-
+				
+				// If form is submitted
         if ($_POST['reg_submit']) {
             $this->username = $_POST['reg_name'];
             $this->email = $_POST['reg_email'];
             $this->password = $_POST['reg_password'];
             $this->first_name = $_POST['reg_fname'];
             $this->last_name = $_POST['reg_lname'];
-            $this->age = $_POST['reg_age'];
+            $this->birth_year = $_POST['reg_birth_year'];
             $this->phone = $_POST['reg_phone'];
             $this->street_address = $_POST['reg_street_address'];
             $this->city = $_POST['reg_city'];
@@ -248,11 +276,14 @@ class Player_registration_form
             $this->parent_email = $_POST['reg_parent_email'];
             $this->parent_phone = $_POST['reg_parent_phone'];
 
+						// Validate input
             $this->validation();
+						// Register user if validation passes
             $this->registration();
         }
-
+				// Display registration form
         $this->registration_form();
+				// Stop buffering
         return ob_get_clean();
     }
 
